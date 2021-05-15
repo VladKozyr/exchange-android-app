@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currency"
+            type="com.vlad.kozyr.architecture.domain.model.Currency" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/currency_name"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{currency.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/exchange_rates.json/rates/name" />
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Double.toString(currency.rate)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currency_name"
+            tools:text="@sample/exchange_rates.json/rates/rate" />
+
+        <TextView
+            android:id="@+id/percentage_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@{currency.percentageChange >= 0 ? @drawable/ic_arrow_up : @drawable/ic_arrow_down}"
+            android:text='@{String.format("%.3f", currency.percentageChange) + "%"}'
+            android:textColor="@{currency.percentageChange >= 0 ? @color/green : @color/red}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:drawableStartCompat="@drawable/ic_arrow_up"
+            tools:ignore="UseCompatTextViewDrawableXml"
+            tools:text="@sample/exchange_rates.json/rates/percentage_change"
+            tools:textColor="@color/green" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,4 @@
+include ':exchange_api'
+include ':architecture'
+include ':network'
+rootProject.name = "exchange-android-app"

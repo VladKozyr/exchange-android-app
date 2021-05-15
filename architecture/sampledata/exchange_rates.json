@@ -1,0 +1,44 @@
+{
+  "rates": [
+    {
+      "name": "AED",
+      "rate": 4.433939,
+      "percentage_change": "1.232%"
+    },
+    {
+      "name": "AFN",
+      "rate": 93.556705,
+      "percentage_change": "1.121%"
+    },
+    {
+      "name": "ALL",
+      "rate": 123.637702,
+      "percentage_change": "3.233%"
+    },
+    {
+      "name": "AMD",
+      "rate": 628.455359,
+      "percentage_change": "-2.2234%"
+    },
+    {
+      "name": "ANG",
+      "rate": 93.556705,
+      "percentage_change": "4.2324%"
+    },
+    {
+      "name": "AOA",
+      "rate": 93.556705,
+      "percentage_change": "5.232%"
+    },
+    {
+      "name": "ARS",
+      "rate": 93.556705,
+      "percentage_change": "-0.546%"
+    },
+    {
+      "name": "AUD",
+      "rate": 93.556705,
+      "percentage_change": "0.326%"
+    }
+  ]
+}

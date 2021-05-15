@@ -1,0 +1,36 @@
+import com.vlad.kozyr.buildsrc.Libraries
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation(Libraries.kotlin)
+    implementation(Libraries.retrofit)
+    implementation(Libraries.retrofitGsonConverter)
+
+    implementation(Libraries.koinAndroidCore)
+    implementation(Libraries.koinAndroidExt)
+
+    implementation "com.squareup.okhttp3:logging-interceptor:4.8.1"
+}
